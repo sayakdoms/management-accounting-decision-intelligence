@@ -1,0 +1,4 @@
+sku,setups,qc_batches,cartons,orders,units_produced
+Sachet Pack,100,150,80000,1200,40000000
+Bottle Pack,180,200,60000,1000,15000000
+Family Pack,220,250,40000,800,5000000

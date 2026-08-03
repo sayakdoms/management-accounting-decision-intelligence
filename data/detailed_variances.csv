@@ -1,0 +1,6 @@
+variance,formula,result_rs_million,nature,managerial_interpretation
+Material Price Variance,(SP - AP) x AQ,3.09,Unfavourable,Procurement/market-driven input price pressure
+Material Usage Variance,(SQ - AQ) x SP,1.26,Unfavourable,"Usage inefficiency, wastage, or yield loss"
+Labour Rate Variance,(SR - AR) x AH,-0.46,Favourable,Actual wage rate below standard rate
+Labour Efficiency Variance,(SH - AH) x SR,-0.54,Favourable,Actual labour hours below standard hours
+Variable Overhead Variance,(SVR - AVR) x AH,0.485,Unfavourable,Variable overhead rate exceeded standard rate

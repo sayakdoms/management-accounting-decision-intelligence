@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Management Accounting Decision Intelligence</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --accent: #0f3d5e;
+      --accent2: #0ea5e9;
+      --soft: #e8f4fc;
+      --border: #d8e3ec;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #081c2d, #0f3d5e, #0ea5e9);
+      color: white;
+      padding: 76px 8% 68px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+    }
+    header p {
+      max-width: 900px;
+      margin: 20px auto 0;
+      font-size: 1.15rem;
+      opacity: 0.94;
+    }
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 38px 20px 70px;
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 14px 28px rgba(15, 61, 94, 0.07);
+    }
+    h2 {
+      color: var(--accent);
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+    h3 {
+      color: #1e3a5f;
+      margin-bottom: 8px;
+    }
+    .hero-tags, .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .tags { justify-content: flex-start; }
+    .tag {
+      background: var(--soft);
+      color: var(--accent);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      background: #fbfdff;
+    }
+    .metric {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 22px;
+      margin-top: 20px;
+    }
+    figure {
+      margin: 0;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      background: #fff;
+    }
+    figure img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+    figcaption {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+    .workflow {
+      display: grid;
+      gap: 14px;
+      counter-reset: step;
+    }
+    .workflow div {
+      counter-increment: step;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fbfdff;
+    }
+    .workflow div::before {
+      content: counter(step);
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      margin-right: 10px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      font-weight: 800;
+    }
+    .note {
+      background: #fff8e6;
+      border: 1px solid #f0d99b;
+      color: #5a4300;
+      padding: 16px;
+      border-radius: 14px;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Management Accounting Decision Intelligence Dashboard</h1>
+    <p>
+      A Python-based portfolio project applying variance analysis, CVP modelling,
+      and Activity-Based Costing to support pricing, cost-control, and strategic decision-making.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Variance Analysis</span>
+      <span class="tag">CVP Simulator</span>
+      <span class="tag">ABC Costing</span>
+      <span class="tag">Decision Matrix</span>
+      <span class="tag">Streamlit Dashboard</span>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#insights">Insights</a>
+    <a href="#screenshots">Screenshots</a>
+    <a href="#charts">Charts</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#tech">Tech Stack</a>
+    <a href="#privacy">Privacy</a>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h2>Executive Overview</h2>
+      <p>
+        This project transforms a management accounting case into a decision-intelligence system.
+        It demonstrates how structured accounting data can be used to diagnose cost variances,
+        test pricing and cost scenarios, identify overhead allocation distortions, and recommend
+        a strategic implementation path.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <div class="metric">Rs 6.7 mn</div>
+          <div class="muted">Overall unfavourable profit impact in the case dataset</div>
+        </div>
+        <div class="card">
+          <div class="metric">Rs 10.8 mn</div>
+          <div class="muted">Highest scenario profit under price cut with higher volume</div>
+        </div>
+        <div class="card">
+          <div class="metric">Rs 7.56/unit</div>
+          <div class="muted">Largest ABC vs traditional costing distortion</div>
+        </div>
+        <div class="card">
+          <div class="metric">Phased ABC</div>
+          <div class="muted">Recommended strategic implementation path</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard">
+      <h2>Interactive Dashboard Module</h2>
+      <p>
+        The repository includes a Streamlit dashboard with four modules:
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Executive Summary</h3>
+          <p>Shows key metrics, recommended strategy, and decision matrix.</p>
+        </div>
+        <div class="card">
+          <h3>CVP Simulator</h3>
+          <p>Allows users to change price, variable cost, fixed cost, and volume.</p>
+        </div>
+        <div class="card">
+          <h3>Variance Diagnosis</h3>
+          <p>Classifies variances and suggests managerial actions.</p>
+        </div>
+        <div class="card">
+          <h3>ABC Intelligence</h3>
+          <p>Highlights costing distortion between traditional and ABC methods.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="insights">
+      <h2>Key Managerial Insights</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Static budgets reduce agility</h3>
+          <p>Traditional annual budgets can become outdated when input prices, demand, and promotions change quickly.</p>
+        </div>
+        <div class="card">
+          <h3>Variance timing matters</h3>
+          <p>Delayed reporting turns variance analysis into a post-mortem instead of an early-warning control system.</p>
+        </div>
+        <div class="card">
+          <h3>ABC reveals hidden distortion</h3>
+          <p>Traditional overhead allocation can over-cost high-volume products and under-cost low-volume complex products.</p>
+        </div>
+        <div class="card">
+          <h3>Phased transformation is practical</h3>
+          <p>A phased ABC and flexible-budgeting rollout balances analytical accuracy with implementation feasibility.</p>
+        </div>
+      </div>
+    </section>
+         <section id="screenshots">
+      <h2>Dashboard & Website Screenshots</h2>
+      <p>
+        These screenshots show the interactive dashboard and the GitHub Pages-style
+        project showcase prepared for portfolio presentation.
+      </p>
+
+      <div class="chart-grid">
+        <figure>
+          <img src="assets/screenshots/dashboard-executive-summary.png" alt="Executive summary dashboard screenshot" />
+          <figcaption>Executive Summary tab showing key decision metrics and recommendation.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/screenshots/dashboard-cvp-simulator.png" alt="CVP simulator dashboard screenshot" />
+          <figcaption>CVP Simulator allowing price, cost, volume, and fixed cost changes.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/screenshots/dashboard-variance-diagnosis.png" alt="Variance diagnosis dashboard screenshot" />
+          <figcaption>Variance Diagnosis Engine classifying deviations and suggesting actions.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/screenshots/dashboard-abc-costing.png" alt="ABC costing intelligence dashboard screenshot" />
+          <figcaption>ABC Costing Intelligence comparing activity-based and traditional costing.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/screenshots/website-homepage-1.png" alt="Website homepage screenshot one" />
+          <figcaption>GitHub Pages showcase homepage preview.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/screenshots/website-homepage-2.png" alt="Website homepage screenshot two" />
+          <figcaption>Additional homepage section showing project structure and presentation.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="charts">
+      <h2>Generated Analytical Charts</h2>
+      <div class="chart-grid">
+        <figure>
+          <img src="charts/variance_impact_summary.png" alt="Variance impact summary" />
+          <figcaption>Variance impact summary across material, labour, overhead, and sales price.</figcaption>
+        </figure>
+        <figure>
+          <img src="charts/cvp_profit_scenarios.png" alt="CVP profit scenarios" />
+          <figcaption>Profit comparison across CVP scenarios.</figcaption>
+        </figure>
+        <figure>
+          <img src="charts/abc_costing_distortion.png" alt="ABC costing distortion" />
+          <figcaption>ABC overhead per unit compared with traditional overhead allocation.</figcaption>
+        </figure>
+        <figure>
+          <img src="charts/abc_difference_by_sku.png" alt="ABC difference by SKU" />
+          <figcaption>Costing distortion calculated as ABC overhead minus traditional overhead.</figcaption>
+        </figure>
+        <figure>
+          <img src="charts/decision_matrix_score.png" alt="Decision matrix score" />
+          <figcaption>Strategic alternative score comparing implementation choices.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="workflow">
+      <h2>Project Workflow</h2>
+      <div class="workflow">
+        <div>Convert appendix exhibits into structured CSV datasets.</div>
+        <div>Build reusable Python models for CVP, variance diagnosis, and ABC costing.</div>
+        <div>Create visual charts for portfolio-level storytelling.</div>
+        <div>Develop a Streamlit dashboard for interactive decision support.</div>
+        <div>Publish a sanitized GitHub repository and GitHub Pages showcase.</div>
+      </div>
+    </section>
+
+    <section id="tech">
+      <h2>Tech Stack</h2>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Matplotlib</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">CSV Data Modelling</span>
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">GitHub Pages</span>
+      </div>
+    </section>
+
+    <section id="privacy">
+      <h2>Public-Safety Note</h2>
+      <div class="note">
+        The original academic PDF is not included in this repository. This public version removes
+        professor details, classmate names, roll numbers, and academic front matter. It presents
+        only sanitized datasets, models, dashboard logic, charts, and managerial insights.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Management Accounting Decision Intelligence Dashboard | Portfolio Project
+  </footer>
+</body>
+</html>

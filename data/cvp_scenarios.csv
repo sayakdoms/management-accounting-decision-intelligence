@@ -1,0 +1,4 @@
+scenario,selling_price,variable_cost,quantity,fixed_cost_rs_million,sales_rs_million,profit_rs_million,bep_units,mos_percent
+Base Case,100,70,1000000,20,100.0,10.0,666667,33.3
+"S1: Price Cut, Higher Volume",98,70,1100000,20,107.8,10.8,714286,35.1
+S2: Cost Increase,100,72,1000000,20,100.0,8.0,714286,28.6

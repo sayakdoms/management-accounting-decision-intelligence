@@ -1,0 +1,5 @@
+activity_cost_pool,overhead_rs,cost_driver,total_quantity,rate_rs_per_driver
+Production Setups,45000000,No. of Setups,500,90000
+Quality Control,30000000,QC Batches,600,50000
+Packaging & Handling,45000000,Cartons,180000,250
+Order Processing & Distribution,30000000,Customer Orders,3000,10000

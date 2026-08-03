@@ -1,0 +1,6 @@
+cost_element,standard_cost_per_unit,actual_cost_per_unit,variance,nature
+Direct Material,42.0,46.5,4.5,Unfavourable
+Direct Labour,18.0,17.0,-1.0,Favourable
+Variable Overhead,10.0,11.2,1.2,Unfavourable
+Fixed Overhead,8.0,8.0,0.0,Neutral
+Total Cost per Unit,78.0,82.7,4.7,Unfavourable
